@@ -19,8 +19,7 @@
     "symfony/symfony": "^3.0||^4.0"
   },
   "autoload": {
-    "psr-0" : {
-      "BaptisteDulac\\PushNotificationBundle" : ""
-    }
-  }
+    "psr-4": {"" : ""}
+  },
+  "target-dir": "baptiste-dulac/push-notification-bundle"
 }
