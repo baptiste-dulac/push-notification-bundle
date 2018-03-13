@@ -1,0 +1,5 @@
+services:
+    BaptisteDulac\Sender\AndroidSender:
+        arguments:
+            - '%bd_push_notification.android.api_key%'
+            - '%bd_push_notification.android.timeout%'
