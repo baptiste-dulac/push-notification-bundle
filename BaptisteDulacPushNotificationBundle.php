@@ -1,6 +1,6 @@
 <?php
 
-namespace BaptisteDulac\PushNotificationsBundle;
+namespace BaptisteDulac\PushNotificationBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

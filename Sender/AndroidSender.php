@@ -1,10 +1,14 @@
 <?php
 
-namespace BaptisteDulac\PushNotificationsBundle\Sender;
+namespace BaptisteDulac\PushNotificationBundle\Sender;
 
-use BaptisteDulac\PushNotificationsBundle\SenderInterface;
+use BaptisteDulac\PushNotificationBundle\SenderInterface;
 
 class AndroidSender implements SenderInterface
 {
 
+    public function send(array $messages, array $devicesIdentifier)
+    {
+        // TODO: Implement send() method.
+    }
 }

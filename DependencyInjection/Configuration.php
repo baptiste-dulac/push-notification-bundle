@@ -1,5 +1,6 @@
 <?php
-namespace BaptisteDulac\PushNotificationsBundle\DependencyInjection;
+
+namespace BaptisteDulac\PushNotificationBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

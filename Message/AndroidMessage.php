@@ -1,8 +1,8 @@
 <?php
 
-namespace BaptisteDulac\PushNotificationsBundle\Message;
+namespace BaptisteDulac\PushNotificationBundle\Message;
 
-use BaptisteDulac\PushNotificationsBundle\MessageInterface;
+use BaptisteDulac\PushNotificationBundle\MessageInterface;
 
 class AndroidMessage implements MessageInterface
 {

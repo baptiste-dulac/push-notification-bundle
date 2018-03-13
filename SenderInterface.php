@@ -1,6 +1,6 @@
 <?php
 
-namespace BaptisteDulac\PushNotificationsBundle;
+namespace BaptisteDulac\PushNotificationBundle;
 
 interface SenderInterface
 {

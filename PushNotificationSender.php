@@ -1,10 +1,9 @@
 <?php
 
-namespace AppBundle\Notification\PushNotification;
+namespace BaptisteDulac\PushNotificationBundle;
 
-use BaptisteDulac\PushNotificationsBundle\MessageInterface;
-use BaptisteDulac\PushNotificationsBundle\Sender\AndroidSender;
-use BaptisteDulac\PushNotificationsBundle\Sender\IOSSender;
+use BaptisteDulac\PushNotificationBundle\Sender\AndroidSender;
+use BaptisteDulac\PushNotificationBundle\Sender\IOSSender;
 
 class PushNotificationSender
 {
@@ -13,7 +12,7 @@ class PushNotificationSender
 
     private $iOS;
 
-    public function __construct(AndroidSender $androidSender, IOSSender $iOSSender)
+    public function __construct(AndroidSender $androidSender = null, IOSSender $iOSSender = null)
     {
         $this->android = $androidSender;
         $this->iOS = $iOSSender;

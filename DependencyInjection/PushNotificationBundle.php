@@ -1,5 +1,6 @@
 <?php
-namespace BaptisteDulac\PushNotificationsBundle\DependencyInjection;
+
+namespace BaptisteDulac\PushNotificationBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
