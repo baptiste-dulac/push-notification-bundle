@@ -25,9 +25,9 @@ class BaptisteDulacPushNotificationExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         if (isset($config['android'])) {
-            $this->container->setParameter('bd_push_notifications.android.enabled', true);
-            $this->container->setParameter("bd_push_notifications.android.api_key", $config["android"]["timeout"]);
-            $this->container->setParameter("bd_push_notifications.android.api_key", $config["android"]["api_key"]);
+            $this->container->setParameter('baptiste_dulac_push_notification.android.enabled', true);
+            $this->container->setParameter("baptiste_dulac_push_notification.android.timeout", $config["android"]["timeout"]);
+            $this->container->setParameter("baptiste_dulac_push_notification.android.api_key", $config["android"]["api_key"]);
             $loader->load('android.yaml');
         }
 
@@ -48,10 +48,10 @@ class BaptisteDulacPushNotificationExtension extends Extension
             throw new \RuntimeException(sprintf('Pem file "%s" not found.', $config["pem"]));
         }
 
-        $this->container->setParameter('bd_push_notifications.ios.enabled', true);
-        $this->container->setParameter('bd_push_notifications.ios.timeout', $config["timeout"]);
-        $this->container->setParameter('bd_push_notifications.ios.sandbox', $config["sandbox"]);
-        $this->container->setParameter('bd_push_notifications.ios.pem', $pemFile);
-        $this->container->setParameter('bd_push_notifications.ios.passphrase', $config["passphrase"]);
+        $this->container->setParameter('baptiste_dulac_push_notification.ios.enabled', true);
+        $this->container->setParameter('baptiste_dulac_push_notification.ios.timeout', $config["timeout"]);
+        $this->container->setParameter('baptiste_dulac_push_notification.ios.sandbox', $config["sandbox"]);
+        $this->container->setParameter('baptiste_dulac_push_notification.ios.pem', $pemFile);
+        $this->container->setParameter('baptiste_dulac_push_notification.ios.passphrase', $config["passphrase"]);
     }
 }

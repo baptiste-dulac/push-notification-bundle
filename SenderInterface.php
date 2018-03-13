@@ -5,6 +5,6 @@ namespace BaptisteDulac\PushNotificationBundle;
 interface SenderInterface
 {
 
-    public function send(array $messages, array $devicesIdentifier);
+    public function send(MessageInterface $message): void;
 
 }

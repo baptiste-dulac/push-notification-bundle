@@ -1,5 +1,5 @@
 services:
-    BaptisteDulac\Sender\AndroidSender:
+    BaptisteDulac\PushNotificationBundle\Sender\AndroidSender:
         arguments:
-            - '%bd_push_notification.android.api_key%'
-            - '%bd_push_notification.android.timeout%'
+            - '%baptiste_dulac_push_notification.android.api_key%'
+            - '%baptiste_dulac_push_notification.android.timeout%'

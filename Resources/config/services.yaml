@@ -1,0 +1,6 @@
+services:
+    BaptisteDulac\PushNotificationBundle\PushNotificationSender:
+        public: false
+        arguments:
+            - '@BaptisteDulac\PushNotificationBundle\Sender\AndroidSender'
+            - '@BaptisteDulac\PushNotificationBundle\Sender\IOSSender'

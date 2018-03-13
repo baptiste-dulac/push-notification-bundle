@@ -12,7 +12,7 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $treeBuilder
-            ->root("baptiste_dulac_push_notifications")->
+            ->root("baptiste_dulac_push_notification")->
             children()->
                 arrayNode("android")->
                     canBeUnset()->

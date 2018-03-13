@@ -1,7 +1,7 @@
 services:
-    BaptisteDulac\Sender\IOSSender:
+    BaptisteDulac\PushNotificationBundle\Sender\IOSSender:
         arguments:
-            - '%bd_push_notification.ios.pem%'
-            - '%bd_push_notification.ios.passphrase%'
-            - '%bd_push_notification.ios.sandbox%'
-            - '%bd_push_notification.ios.timeout%'
+            - '%baptiste_dulac_push_notification.ios.pem%'
+            - '%baptiste_dulac_push_notification.ios.passphrase%'
+            - '%baptiste_dulac_push_notification.ios.sandbox%'
+            - '%baptiste_dulac_push_notification.ios.timeout%'
