@@ -19,5 +19,5 @@
     "symfony/symfony": "^3.0||^4.0"
   },
   "autoload": {
-    "psr-4": {"BaptisteDulac\\PushNotificationBundle" : ""}
+    "psr-4": {"BaptisteDulac\\PushNotificationBundle\\" : ""}
   }}
