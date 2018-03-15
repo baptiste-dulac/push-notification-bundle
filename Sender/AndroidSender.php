@@ -18,8 +18,7 @@ class AndroidSender implements SenderInterface
         $this->timeout = $timeout;
     }
 
-
-    public function send(MessageInterface $message): void
+    private function sendBatch(array $devices, MessageInterface $message)
     {
         $headers = [
             'Authorization: key=' . $this->apiKey,
@@ -32,7 +31,7 @@ class AndroidSender implements SenderInterface
                 "message" => $message->message(),
                 "notId" => $message->id()
             ],
-            'registration_ids' => $message->devices(),
+            'registration_ids' => $devices,
         ];
 
         $ch = curl_init();
@@ -44,5 +43,13 @@ class AndroidSender implements SenderInterface
         curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $data ) );
         $result = curl_exec($ch );
         curl_close( $ch );
+    }
+
+    public function send(MessageInterface $message): void
+    {
+        $deviceChuncks = array_chunk($message->devices(), 1000);
+        foreach ($deviceChuncks as $device) {
+            $this->sendBatch($device, $message);
+        }
     }
 }
