@@ -17,7 +17,7 @@ class IOSSender implements SenderInterface
 
     const SANDBOX_ENDPOINT = "ssl://gateway.sandbox.push.apple.com:2195";
 
-    //const ENDPOINT = "ssl://gateway.push.apple.com:2195";
+    const ENDPOINT = "ssl://gateway.push.apple.com:2195";
 
     public function __construct(string $pem, string $passPhrase, bool $sandbox = false, $timeout = 60)
     {
@@ -47,7 +47,7 @@ class IOSSender implements SenderInterface
         stream_context_set_option($ctx, 'ssl', 'local_cert', $this->pem);
         stream_context_set_option($ctx, 'ssl', 'passphrase', $this->passPhrase);
         $fp = stream_socket_client(
-            self::SANDBOX_ENDPOINT,
+            $this->sandbox ? self::SANDBOX_ENDPOINT : self::ENDPOINT,
             $err,
             $errstr,
             $this->timeout,
