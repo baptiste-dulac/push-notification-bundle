@@ -47,8 +47,8 @@ class AndroidSender implements SenderInterface
 
     public function send(MessageInterface $message): void
     {
-        $deviceChuncks = array_chunk($message->devices(), 1000);
-        foreach ($deviceChuncks as $device) {
+        $deviceChunks = array_chunk($message->devices(), 1000);
+        foreach ($deviceChunks as $device) {
             $this->sendBatch($device, $message);
         }
     }
