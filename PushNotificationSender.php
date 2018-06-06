@@ -37,6 +37,7 @@ class PushNotificationSender
                 $this->android->send($message);
             }
         }
+        $this->messages = [];
     }
 
 }
