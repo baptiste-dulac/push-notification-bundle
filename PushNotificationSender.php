@@ -31,10 +31,14 @@ class PushNotificationSender
     {
         foreach ($this->messages as $message)
         {
-            if ($message instanceof IOSMessage && $this->iOS != null) {
-                $this->iOS->send($message);
-            } else if ($message instanceof AndroidMessage && $this->android != null) {
-                $this->android->send($message);
+            try {
+                if ($message instanceof IOSMessage && $this->iOS != null) {
+                    $this->iOS->send($message);
+                } else if ($message instanceof AndroidMessage && $this->android != null) {
+                    $this->android->send($message);
+                }
+            } catch (\Exception $e) {
+                echo $e->getMessage();
             }
         }
         $this->messages = [];
