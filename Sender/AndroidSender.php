@@ -28,14 +28,13 @@ class AndroidSender implements SenderInterface
         $data =  [
             'data' => [
                 "title" => $message->title(),
-                "message" => trim(nl2br($message->message())),
-                "notId" => $message->id()
+                "body" => trim(nl2br($message->message())),
             ],
             'registration_ids' => $devices,
         ];
 
         $ch = curl_init();
-        curl_setopt($ch,CURLOPT_URL, 'https://android.googleapis.com/gcm/send');
+        curl_setopt($ch,CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
         curl_setopt($ch,CURLOPT_POST, true);
         curl_setopt($ch,CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
